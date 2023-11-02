@@ -1,4 +1,6 @@
-﻿namespace ExercicioContaBancaria {
+﻿using System.Globalization;
+
+namespace ExercicioContaBancaria {
     internal class ContaBancaria {
 
         public double Saldo { get; private set; }
@@ -29,7 +31,7 @@
                 + ", Titular: "
                 + Titular
                 + ", Saldo: $ "
-                + Saldo.ToString("F2");
+                + Saldo.ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }

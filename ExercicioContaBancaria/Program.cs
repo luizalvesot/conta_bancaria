@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace ExercicioContaBancaria {
     internal class Program {
@@ -17,7 +18,7 @@ namespace ExercicioContaBancaria {
 
             if (resp == 's' || resp == 'S') {
                 Console.Write("Entre o valor de depósito inicial: ");
-                double depositoInicial = double.Parse(Console.ReadLine());
+                double depositoInicial = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
                 cb = new ContaBancaria(numero, titular, depositoInicial);
             } else{
@@ -27,12 +28,12 @@ namespace ExercicioContaBancaria {
             Console.WriteLine("\nDados da conta: \n" + cb);
 
             Console.Write("\n\n Entre um valor para depósito: ");
-            double quantia = double.Parse(Console.ReadLine());
+            double quantia = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             cb.Deposito(quantia);
             Console.WriteLine("\nDados da conta atualizados: \n" + cb);
 
             Console.Write("\n\n Entre um valor para saque: ");
-            quantia = double.Parse(Console.ReadLine());
+            quantia = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
             cb.Saque(quantia);
             Console.WriteLine("\nDados da conta atualizados: \n" + cb);
         }
